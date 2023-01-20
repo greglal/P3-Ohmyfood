@@ -11,10 +11,12 @@ $title-font:'Shrikhand', 'sans-serif';
 $text-font:'Roboto', 'sans-serif';
 
 $text-size:2vh;
+$title-size:3vh;
 
 header{
   text-align:center;
-  margin-top: 5%;
+  margin-top:5%;
+  height:40px;
 }
 
 #form{
@@ -23,15 +25,63 @@ header{
   margin-top: 2%;
   form{
     width:100%;
+    height:400px;
+    background-color: darken(#fff, 5%);
+    display:flex;
+    flex-direction:column;
+    .fa-sharp{
+      position:absolute;
+      z-index:1;
+      font-size:$text-size;
+      margin-top:3%;
+      margin-left:30%;
+      opacity:.8;
+    }
     input{
       width:100%;
-      height:50px;
+      height:70px;
       border:none;
       text-align:center;
       align-items:center;
-      font-weight:bold;
-      font-size:$text-size;
-
+      background-color: darken(#fff, 10%);
+      &::placeholder{
+        font-weight:bold;
+        font-size:$text-size;
+        font-family:$text-font;
+      }
+    }
+    .formTxt{
+      text-align:center;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-evenly;
+      align-items:center;
+      padding: 5% 0 5% 0;
+      h1{
+        font-family: $text-font;
+        font-size:$title-size;
+        font-weight: bold;
+        width:65%;
+        text-align:center;
+      }
+      p{
+        font-family: $text-font;
+        font-size:$text-size;
+        width:75%;
+        opacity:.75;
+      }
+      .btn-explore{
+        width:55%;
+        height:55px;
+        border-radius:30px;
+        background:linear-gradient($secondary-clr, $primary-clr);
+        font-family: $text-font;
+        font-size:$text-size;
+        color:#fff;
+        border:none;
+        box-shadow: 5px 5px darken(#fff, 12%);
+      }
     }
   }
 }
