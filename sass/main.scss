@@ -182,6 +182,7 @@ main{
     border-radius:15px;
     background-color: #fff;
     width:90%;
+    height:250px;
     box-shadow:5px 5px 5px darken(#fff, 10%);
     .img-restaurant{
       width:100%;
@@ -218,6 +219,7 @@ main{
       }
       p{
         font-family:$text-font;
+        margin-top: 2%;
       }
       .fa-heart{
         font-size:$title-size;
@@ -260,5 +262,10 @@ footer{
     }
   }
 }
+
+/* **************************
+****** page restaurant ******
+************************** */
+
 
 

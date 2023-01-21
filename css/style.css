@@ -164,6 +164,7 @@ main .restaurant {
   border-radius: 15px;
   background-color: #fff;
   width: 90%;
+  height: 250px;
   box-shadow: 5px 5px 5px #e6e6e6;
 }
 main .restaurant .img-restaurant {
@@ -201,6 +202,7 @@ main .restaurant .restaurant-descrtn h3 {
 }
 main .restaurant .restaurant-descrtn p {
   font-family: "Roboto", "sans-serif";
+  margin-top: 2%;
 }
 main .restaurant .restaurant-descrtn .fa-heart {
   font-size: 3vh;
@@ -242,5 +244,9 @@ footer ul li a i {
 footer ul li a p {
   margin-left: 20px;
 }
+
+/* **************************
+****** page restaurant ******
+************************** */
 
 /*# sourceMappingURL=style.css.map */
