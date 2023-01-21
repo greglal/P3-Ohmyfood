@@ -3,16 +3,20 @@
   padding: 0;
 }
 
+/* ****************************
+******** page Accueil *********
+**************************** */
+/* ****** header ****** */
 header {
   text-align: center;
   margin-top: 5%;
-  height: 40px;
+  height: 50px;
 }
 
+/* ****** formulaire ****** */
 #form {
   display: flex;
   flex-direction: column;
-  margin-top: 2%;
 }
 #form form {
   width: 100%;
@@ -21,26 +25,20 @@ header {
   display: flex;
   flex-direction: column;
 }
-#form form .fa-sharp {
-  position: absolute;
-  z-index: 1;
-  font-size: 2vh;
-  margin-top: 3%;
-  margin-left: 30%;
-  opacity: 0.8;
-}
 #form form input {
   width: 100%;
-  height: 70px;
+  height: 60px;
   border: none;
   text-align: center;
   align-items: center;
   background-color: #e6e6e6;
+  box-shadow: inset 0 5px 5px #cccccc;
 }
 #form form input::placeholder {
   font-weight: bold;
   font-size: 2vh;
-  font-family: "Roboto", "sans-serif";
+  font-family: "Roboto", "sans-serif", Fontawesome;
+  color: black;
 }
 #form form .formTxt {
   text-align: center;
@@ -74,6 +72,72 @@ header {
   color: #fff;
   border: none;
   box-shadow: 5px 5px #e0e0e0;
+}
+
+/* ****** fonctionnement ****** */
+h2 {
+  margin-left: 15px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: bolder;
+  font-size: 2.5vh;
+}
+
+#fonctionnement {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 300px;
+}
+#fonctionnement .fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+}
+#fonctionnement .fonctionnement .div-fonctnmnt {
+  height: 60px;
+  width: 300px;
+  border-radius: 25px;
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  align-self: center;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt {
+  display: flex;
+  height: 60px;
+  /*justify-content: space-around;*/
+  align-items: center;
+  font-size: 1.5vh;
+  font-family: "Roboto", "sans-serif";
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .number {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 3% 0 -3%;
+  text-align: center;
+  background-color: #9356DC;
+  color: #fff;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-mobile-screen-button {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-list {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-store {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+  color: #9356DC;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .title-fonctnmnt {
+  margin: 0 3% 0 3%;
 }
 
 /*# sourceMappingURL=main.css.map */
