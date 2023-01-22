@@ -7,6 +7,7 @@ $secondary-clr: #FF79DA;
 $tertiary-clr: #99E2D0;
 $bg-darken10-clr:darken(#fff, 10%);
 $bg-darken5-clr:darken(#fff, 5%);
+$btn-color:linear-gradient($secondary-clr, $primary-clr);
 $title-font:'Shrikhand', 'sans-serif';
 $text-font:'Roboto', 'sans-serif';
 $text-size:2vh;
@@ -23,6 +24,21 @@ $title-scnd-size:2.5vh;
   margin-left: 20px;
   text-decoration:none;
   color:#fff;
+}
+
+@mixin flex-evenly{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+}
+
+@mixin ellipsis{
+  opacity:.75;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  width:90%;
+  font-size:$text-size;
 }
 
 
@@ -65,9 +81,7 @@ header{
     .formTxt{
       text-align:center;
       height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-evenly;
+      @include flex-evenly;
       align-items:center;
       padding: 5% 0 5% 0;
       h1{
@@ -83,18 +97,22 @@ header{
         width:75%;
         opacity:.75;
       }
-      .btn-explore{
-        width:55%;
-        height:55px;
-        border-radius:30px;
-        background:linear-gradient($secondary-clr, $primary-clr);
-        font-family: $text-font;
-        font-size:$text-size;
-        color:#fff;
-        border:none;
-        box-shadow:5px 5px darken(#fff, 12%);
-      }
     }
+  }
+}
+.btn-explore{
+  width:55%;
+  height:55px;
+  border-radius:30px;
+  background:$btn-color;
+  font-family: $text-font;
+  font-size:$text-size;
+  color:#fff;
+  border:none;
+  box-shadow:5px 5px darken(#fff, 12%);
+  align-self:center;
+  &:hover{
+    /*background:lighten($btn-color, 10%);*/
   }
 }
 
@@ -108,9 +126,7 @@ h2{
 
 #fonctionnement{
   margin-top:40px;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-evenly;
+  @include flex-evenly;
   height:300px;
   .fonctionnement{
     display:flex;
@@ -129,7 +145,6 @@ h2{
       .etape-fonctnmnt{
         display: flex;
         height:60px;
-        /*justify-content: space-around;*/
         align-items: center;
         font-size:1.5vh;
         font-family: $text-font;
@@ -171,9 +186,7 @@ h2{
   }
   #articles{
     height:1100px;
-    display: flex;
-    flex-direction:column;
-    justify-content:space-evenly;
+    @include flex-evenly;
   }
   .restaurant{
     display:flex;
@@ -184,6 +197,8 @@ h2{
     width:90%;
     height:250px;
     box-shadow:5px 5px 5px darken(#fff, 10%);
+    text-decoration:none;
+    color:black;
     .img-restaurant{
       width:100%;
       height:180px;
@@ -233,18 +248,14 @@ h2{
 footer{
   background-color: #353535;
   height:180px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-evenly;
+  @include flex-evenly;
   #logo-footer{
     font-size:2.5vh;
     font-family:$title-font;
     @include footer;
   }
   ul{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-evenly;
+    @include flex-evenly;
     height:100px;
     font-family:$text-font;
     li{
@@ -270,7 +281,7 @@ footer{
 /* ***** header ***** */
 .header-restaurant{
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin:20px 80px 0 30px;
   .fa-arrow-left{
     font-size:$title-size;
@@ -282,16 +293,15 @@ footer{
 /* ***** photo restau ***** */
 .pic-restau{
   height:300px;
-  background-image: url('../images/restaurants/a_la_francaise.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  width:100%;
+  overflow:hidden;
+  object-fit:cover;
 }
 
 /* ***** main/menu ***** */
 .main-restau{
   height:1100px;
-  border-radius: 25px 25px 0 0;
-  margin-top:-50px;
+  margin-top:-25px;
   background-color:$bg-darken5-clr;
   display:flex;
   flex-direction: column;
@@ -299,6 +309,8 @@ footer{
     padding:20px 20px 0 20px;
     display:flex;
     justify-content: space-between;
+    background-color:$bg-darken5-clr;
+    border-radius: 25px 25px 0 0;
     .name-restau{
       font-size:$title-size;
       font-family:$title-font;
@@ -311,9 +323,7 @@ footer{
   }
   .dishes-cat{
     height:300px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    @include flex-evenly;
     .dishes-cat-title{
       text-transform : uppercase;
       font-family: $text-font;
@@ -330,41 +340,32 @@ footer{
     }
     .dishes{
       display: flex;
-      margin: 0 20px 0 20px;
       background-color:#fff;
       border-radius:25px;
       height:20%;
+      justify-content: center;
+      align-items: center;
       box-shadow:5px 5px 5px darken(#fff, 10%);
       .dishes-name{
-        margin:2% 0 0 4%;
         font-family:$text-font;
         width:80%;
+        h3{
+          @include ellipsis;
+        }
         p{
-          opacity:.75;
-          text-overflow:ellipsis;
+          @include ellipsis;
         }
     }
       .price{
         z-index:0;
         font-family:$text-font;
+        font-size:$text-size;
         font-weight:bold;
-        margin-top:8%;
       }
       .validation{
         visibility:hidden;
       }
     }
-  }
-  .order{
-    width:55%;
-    height:45px;
-    align-self:center;
-    margin-top:8%;
-    border-radius:25px;
-    background:linear-gradient($secondary-clr, $primary-clr);
-    border:none;
-    color:#fff;
-    box-shadow:5px 5px 5px darken(#fff, 15%);
   }
 
 }
