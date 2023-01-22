@@ -248,5 +248,105 @@ footer ul li a p {
 /* **************************
 ****** page restaurant ******
 ************************** */
+/* ***** header ***** */
+.header-restaurant {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 80px 0 30px;
+}
+.header-restaurant .fa-arrow-left {
+  font-size: 3vh;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* ***** photo restau ***** */
+.pic-restau {
+  height: 300px;
+  background-image: url("../images/restaurants/a_la_francaise.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ***** main/menu ***** */
+.main-restau {
+  height: 1100px;
+  border-radius: 25px 25px 0 0;
+  margin-top: -50px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+.main-restau .title-restau {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-restau .title-restau .name-restau {
+  font-size: 3vh;
+  font-family: "Shrikhand", "sans-serif";
+}
+.main-restau .title-restau .fa-heart {
+  margin-right: 20px;
+  margin-top: 5px;
+  font-size: 3vh;
+}
+.main-restau .dishes-cat {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main-restau .dishes-cat .dishes-cat-title {
+  text-transform: uppercase;
+  font-family: "Roboto", "sans-serif";
+  font-size: 2vh;
+  opacity: 0.75;
+}
+.main-restau .dishes-cat .underline {
+  width: 35px;
+  height: 2px;
+  margin-left: 15px;
+  margin-top: -10px;
+  background-color: #99E2D0;
+  border: none;
+}
+.main-restau .dishes-cat .dishes {
+  display: flex;
+  margin: 0 20px 0 20px;
+  background-color: #fff;
+  border-radius: 25px;
+  height: 20%;
+  box-shadow: 5px 5px 5px #e6e6e6;
+}
+.main-restau .dishes-cat .dishes .dishes-name {
+  margin: 2% 0 0 4%;
+  font-family: "Roboto", "sans-serif";
+  width: 80%;
+}
+.main-restau .dishes-cat .dishes .dishes-name p {
+  opacity: 0.75;
+  text-overflow: ellipsis;
+}
+.main-restau .dishes-cat .dishes .price {
+  z-index: 0;
+  font-family: "Roboto", "sans-serif";
+  font-weight: bold;
+  margin-top: 8%;
+}
+.main-restau .dishes-cat .dishes .validation {
+  visibility: hidden;
+}
+.main-restau .order {
+  width: 55%;
+  height: 45px;
+  align-self: center;
+  margin-top: 8%;
+  border-radius: 25px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  color: #fff;
+  box-shadow: 5px 5px 5px #d9d9d9;
+}
 
 /*# sourceMappingURL=style.css.map */
