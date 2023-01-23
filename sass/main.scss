@@ -3,7 +3,9 @@
   padding:0;
 }
 $primary-clr: #9356DC;
+$primary-clr-light:lighten($primary-clr, 5%);
 $secondary-clr: #FF79DA;
+$secondary-clr-light:lighten($secondary-clr, 5%);
 $tertiary-clr: #99E2D0;
 $bg-darken10-clr:darken(#fff, 10%);
 $bg-darken5-clr:darken(#fff, 5%);
@@ -112,7 +114,8 @@ header{
   box-shadow:5px 5px darken(#fff, 12%);
   align-self:center;
   &:hover{
-    /*background:lighten($btn-color, 10%);*/
+    background:linear-gradient($secondary-clr-light, $primary-clr-light);
+    box-shadow:5px 5px darken(#fff, 25%);
   }
 }
 
