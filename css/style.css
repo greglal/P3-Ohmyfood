@@ -124,6 +124,9 @@ h2 {
   background-color: #9356DC;
   color: #fff;
 }
+#fonctionnement .fonctionnement .etape-fonctnmnt .number .num {
+  margin-top: 3px;
+}
 #fonctionnement .fonctionnement .etape-fonctnmnt .fa-mobile-screen-button {
   margin: 0 3% 0 3%;
   color: #838383;
@@ -181,18 +184,20 @@ h2 {
   object-position: 50% 60%;
   border-radius: 15px 15px 0 0;
 }
-#main-accueil .restaurant .new {
-  z-index: 1;
+#main-accueil .restaurant .img-new {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#main-accueil .restaurant .img-new .new {
   background-color: #99E2D0;
   width: 80px;
   height: 25px;
   padding-top: 1%;
   border-radius: 1px;
-  margin-left: 65%;
-  margin-top: 4%;
+  margin: 3%;
   position: absolute;
 }
-#main-accueil .restaurant .new p {
+#main-accueil .restaurant .img-new .new p {
   font-weight: bold;
   text-align: center;
   color: #217460;
@@ -203,14 +208,30 @@ h2 {
   justify-content: space-between;
   margin: 15px;
 }
-#main-accueil .restaurant .restaurant-descrtn h3 {
-  font-family: "Roboto", "sans-serif";
+#main-accueil .restaurant .restaurant-descrtn .dscrtn {
+  width: 80%;
 }
-#main-accueil .restaurant .restaurant-descrtn p {
+#main-accueil .restaurant .restaurant-descrtn .dscrtn h3 {
+  font-family: "Roboto", "sans-serif";
+  opacity: 0.75;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
+}
+#main-accueil .restaurant .restaurant-descrtn .dscrtn p {
   font-family: "Roboto", "sans-serif";
   margin-top: 2%;
+  opacity: 0.75;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
 }
 #main-accueil .restaurant .restaurant-descrtn .fa-heart {
+  /*width:20%;*/
   font-size: 3vh;
   margin-top: 2%;
 }
