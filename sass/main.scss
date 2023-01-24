@@ -301,7 +301,7 @@ h2{
     -moz-text-fill-color: transparent;
     &:hover{
       /*opacity:1;*/
-      animation: fill-heart 350ms ease-in-out both;
+      animation: fill-heart 350ms cubic-bezier(.59,.09,.95,.67) both;
       @include animation-heart;
     }
   }
@@ -380,7 +380,6 @@ footer{
       font-size: $title-size;
       font-family: $title-font;
     }
-
     .hearts-restau {
       margin-right: 20px;
       margin-top: 5px;
