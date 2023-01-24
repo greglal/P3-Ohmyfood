@@ -100,16 +100,13 @@ $title-scnd-size:2.5vh;
     }
   }
 }
-@mixin loader-inv{
-  @keyframes rotate-loader-inv{
-    0%{
+@mixin loader-pulse{
+  @keyframes pulse-loader{
+    from{
       transform:scale(1);
     }
-    50%{
-      transform:scale(1.3);
-    }
-    100%{
-      transform:scale(1);
+    to{
+      transform:scale(1.2);
     }
   }
 }
@@ -166,14 +163,14 @@ $title-scnd-size:2.5vh;
   }
   .fa-utensils{
     position: absolute;
-    width:40px;
-    height:40px;
+    width:20px;
+    height:20px;
     color:$primary-clr;
     display:flex;
     justify-content:center;
     align-items:center;
-    animation:rotate-loader-inv 1500ms linear infinite;
-    @include loader-inv;
+    animation:pulse-loader 800ms linear alternate infinite ;
+    @include loader-pulse;
   }
 }
 
