@@ -2,6 +2,8 @@
   margin:0;
   padding:0;
 }
+/* ***** variables ***** */
+/* *** couleurs *** */
 $primary-clr: #9356DC;
 $primary-clr-light:lighten($primary-clr, 5%);
 $secondary-clr: #FF79DA;
@@ -10,12 +12,14 @@ $tertiary-clr: #99E2D0;
 $bg-darken10-clr:darken(#fff, 10%);
 $bg-darken5-clr:darken(#fff, 5%);
 $btn-color:linear-gradient($secondary-clr, $primary-clr);
+/* *** fonts *** */
 $title-font:'Shrikhand', 'sans-serif';
 $text-font:'Roboto', 'sans-serif';
 $text-size:2vh;
 $title-size:3vh;
 $title-scnd-size:2.5vh;
 
+/* ***** mixins ***** */
 @mixin icone{
   margin: 0 3% 0 3%;
   color: darken(darkgray, 15%);
