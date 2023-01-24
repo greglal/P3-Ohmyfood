@@ -75,7 +75,93 @@ $title-scnd-size:2.5vh;
     }
   }
 }
+@mixin full-loader{
+  @keyframes loader-full{
+    0%{
+      opacity:0.8
+      /*visibility:visible;*/
+    }
+    95%{
+      opacity:0.8;
+    }
+    100%{
+      opacity:0;
+      /*visibility:hidden;*/
+    }
+  }
+}
+@mixin loader{
+  @keyframes rotate-loader{
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+}
+@mixin loader-inv{
+  @keyframes rotate-loader-inv{
+    from{
+      transform:rotate(0deg);
+    }
+    to{
+      transform:rotate(-360deg);
+    }
+  }
+}
 
+/* *********************
+******** loader ********
+********************* */
+.loader{
+  position:absolute;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#fff;
+  width:100%;
+  height:100vh;
+  opacity:0;
+  /*visibility:hidden;*/
+  animation:loader-full 3000ms linear;
+  @include full-loader;
+  .circle1{
+    position: relative;
+    width:50px;
+    height:50px;
+    display:inline-block;
+    vertical-align: middle;
+    border-top:5px solid $primary-clr;
+    border-bottom:5px solid $primary-clr;
+    border-radius:50px;
+    opacity:1;
+    animation:rotate-loader 1000ms linear infinite;
+    @include loader;
+  }
+  .circle2{
+    position: absolute;
+    width:35px;
+    height:35px;
+    border-left:5px solid $secondary-clr;
+    border-right: 5px solid $secondary-clr;
+    border-radius:35px;
+    opacity:1;
+    rotate:45deg;
+    animation:rotate-loader-inv 800ms linear infinite;
+    @include loader-inv;
+  }
+  .fa-utensils{
+    position: absolute;
+    width:40px;
+    height:40px;
+    color:$tertiary-clr;
+    margin-top:25px;
+    margin-left:25px;
+    atext-align:center;
+    opacity:1;
+  }
+}
 
 /* ****************************
 ******** page Accueil *********
