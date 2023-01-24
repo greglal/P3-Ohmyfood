@@ -206,7 +206,7 @@ h2 {
 }
 #main-accueil .restaurant .restaurant-descrtn {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 15px;
 }
 #main-accueil .restaurant .restaurant-descrtn .dscrtn {
@@ -231,10 +231,56 @@ h2 {
   width: 90%;
   font-size: 2vh;
 }
-#main-accueil .restaurant .restaurant-descrtn .fa-heart {
-  /*width:20%;*/
-  font-size: 3vh;
+
+.hearts {
+  /*align-items:flex-end;*/
+  position: relative;
   margin-top: 2%;
+}
+.hearts .fa-regular {
+  font-size: 3vh;
+  position: absolute;
+}
+.hearts .fa-solid {
+  /*visibility:hidden;*/
+  opacity: 0;
+  font-size: 3vh;
+  position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.hearts .fa-solid:hover {
+  /*opacity:1;*/
+  animation: fill-heart 350ms ease-in-out both;
+}
+@keyframes fill-heart {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(0.2);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(0.4);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ****** footer ****** */
@@ -315,7 +361,7 @@ footer ul li a p {
   font-size: 3vh;
   font-family: "Shrikhand", "sans-serif";
 }
-.main-restau .title-restau .fa-heart {
+.main-restau .title-restau .hearts-restau {
   margin-right: 20px;
   margin-top: 5px;
   font-size: 3vh;

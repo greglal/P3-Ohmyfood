@@ -43,6 +43,35 @@ $title-scnd-size:2.5vh;
   font-size:$text-size;
 }
 
+@mixin animation-heart{
+  @keyframes fill-heart{
+    0%{
+      transform: scale(0.1);
+      opacity:0;
+    }
+    20%{
+      transform: scale(0.2);
+      opacity:0.3;
+    }
+    40%{
+      transform: scale(0.4);
+      opacity:0.5;
+    }
+    60%{
+      transform: scale(0.6);
+      opacity:0.6;
+    }
+    80%{
+      transform:scale(0.8);
+      opacity:0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
 
 /* ****************************
 ******** page Accueil *********
@@ -234,7 +263,7 @@ h2{
     }
     .restaurant-descrtn{
       display:flex;
-      justify-content:space-between;
+      justify-content:space-evenly;
       margin:15px;
       .dscrtn{
         width:80%;
@@ -248,11 +277,32 @@ h2{
           @include ellipsis;
         }
       }
-      .fa-heart{
-        /*width:20%;*/
-        font-size:$title-size;
-        margin-top:2%;
-      }
+    }
+  }
+}
+.hearts{
+  /*align-items:flex-end;*/
+  position:relative;
+  margin-top:2%;
+
+  .fa-regular{
+    font-size:$title-size;
+    position:absolute;
+  }
+  .fa-solid {
+    /*visibility:hidden;*/
+    opacity:0;
+    font-size: $title-size;
+    position: absolute;
+    background: $btn-color;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    &:hover{
+      /*opacity:1;*/
+      animation: fill-heart 350ms ease-in-out both;
+      @include animation-heart;
     }
   }
 }
@@ -312,75 +362,87 @@ footer{
 }
 
 /* ***** main/menu ***** */
-.main-restau{
-  height:1100px;
-  margin-top:-25px;
-  background-color:$bg-darken5-clr;
-  display:flex;
+.main-restau {
+  height: 1100px;
+  margin-top: -25px;
+  background-color: $bg-darken5-clr;
+  display: flex;
   flex-direction: column;
-  .title-restau{
-    padding:20px 20px 0 20px;
-    display:flex;
+
+  .title-restau {
+    padding: 20px 20px 0 20px;
+    display: flex;
     justify-content: space-between;
-    background-color:$bg-darken5-clr;
+    background-color: $bg-darken5-clr;
     border-radius: 25px 25px 0 0;
-    .name-restau{
-      font-size:$title-size;
-      font-family:$title-font;
+
+    .name-restau {
+      font-size: $title-size;
+      font-family: $title-font;
     }
-    .fa-heart{
-      margin-right:20px;
-      margin-top:5px;
-      font-size:$title-size;
-    }
-  }
-  .dishes-cat{
-    height:300px;
-    @include flex-evenly;
-    .dishes-cat-title{
-      text-transform : uppercase;
-      font-family: $text-font;
-      font-size:$text-size;
-      opacity:.75;
-    }
-    .underline{
-      width:35px;
-      height:2px;
-      margin-left:15px;
-      margin-top: -10px;
-      background-color: $tertiary-clr;
-      border:none;
-    }
-    .dishes{
-      display: flex;
-      background-color:#fff;
-      border-radius:25px;
-      height:20%;
-      justify-content: center;
-      align-items: center;
-      box-shadow:5px 5px 5px darken(#fff, 10%);
-      .dishes-name{
-        font-family:$text-font;
-        width:80%;
-        h3{
-          @include ellipsis;
-        }
-        p{
-          @include ellipsis;
-        }
-    }
-      .price{
-        z-index:0;
-        font-family:$text-font;
-        font-size:$text-size;
-        font-weight:bold;
-      }
-      .validation{
-        visibility:hidden;
-      }
+
+    .hearts-restau {
+      margin-right: 20px;
+      margin-top: 5px;
+      font-size: $title-size;
     }
   }
 
+  .dishes-cat {
+    height: 300px;
+    @include flex-evenly;
+
+    .dishes-cat-title {
+      text-transform: uppercase;
+      font-family: $text-font;
+      font-size: $text-size;
+      opacity: .75;
+    }
+
+    .underline {
+      width: 35px;
+      height: 2px;
+      margin-left: 15px;
+      margin-top: -10px;
+      background-color: $tertiary-clr;
+      border: none;
+    }
+
+    .dishes {
+      display: flex;
+      background-color: #fff;
+      border-radius: 25px;
+      height: 20%;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 5px 5px 5px darken(#fff, 10%);
+
+      .dishes-name {
+        font-family: $text-font;
+        width: 80%;
+
+        h3 {
+          @include ellipsis;
+        }
+
+        p {
+          @include ellipsis;
+        }
+      }
+
+      .price {
+        z-index: 0;
+        font-family: $text-font;
+        font-size: $text-size;
+        font-weight: bold;
+      }
+
+      .validation {
+        visibility: hidden;
+      }
+    }
+  }
 }
+
 
 
