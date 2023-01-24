@@ -353,9 +353,7 @@ h2 {
   position: absolute;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
-  /*-moz-background-clip: text;*/
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
 }
 .hearts .fa-solid:hover {
   /*opacity:1;*/

@@ -396,9 +396,7 @@ h2{
     position: absolute;
     background: $btn-color;
     -webkit-background-clip: text;
-    /*-moz-background-clip: text;*/
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
     &:hover{
       /*opacity:1;*/
       animation: fill-heart 350ms cubic-bezier(.59,.09,.95,.67) both;
