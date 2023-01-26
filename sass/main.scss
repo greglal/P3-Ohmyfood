@@ -137,6 +137,24 @@ $anim-delay:$anim-dur/$num-elem;
   }
 }
 
+@keyframes price{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-100px);
+  }
+}
+
+@keyframes check{
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 /* *********************
 ******** loader ********
 ********************* */
@@ -178,7 +196,7 @@ $anim-delay:$anim-dur/$num-elem;
     height:35px;
     /*border-left:5px solid $secondary-clr;
     border-right: 5px solid $secondary-clr;*/
-    border-top:5px solid $secondary-clr-light;
+    border-top:5px solid $tertiary-clr;
     border-radius:35px;
     rotate:90deg;
     animation:rotate-loader 980ms linear infinite;
@@ -546,20 +564,14 @@ footer{
       align-items: center;
       box-shadow: 5px 5px 5px darken(#fff, 10%);
       &:hover {
-        transition: all 2s;
         .price{
-          transform: translateX(-100px);
-          transition-duration:1000ms;
-          /*transition-delay:100ms;*/
+          animation:price 500ms cubic-bezier(.4,.78,.54,1.06) forwards;
         }
         .validation {
-          transform: translateX(0);
-          transition-duration:800ms;
-          animation:valid 1000ms forwards;
+          animation:valid 500ms cubic-bezier(.4,.78,.54,1.06) forwards;
         }
           .fa-circle-check{
-            transform:rotate(360deg);
-            transition-duration:900ms;
+            animation: check 500ms ease-out;
           }
         }
       }
