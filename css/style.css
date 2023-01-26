@@ -79,27 +79,19 @@
 /* *** apparition validation *** */
 @keyframes valid {
   from {
-    opacity: 1;
-    transform: translateX(100px);
+    transform: translateX(80%);
+    visibility: hidden;
   }
   to {
-    opacity: 1;
     transform: translateX(0);
-  }
-}
-@keyframes price {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50px);
+    visibility: visible;
   }
 }
 /* *********************
 ******** loader ********
 ********************* */
 .loader {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,21 +230,25 @@ h2 {
 }
 
 #fonctionnement {
-  margin-top: 40px;
+  /*margin-top:40px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 300px;
+  /*display:flex;
+  flex-direction:column;
+  justify-content:space-evenly;*/
+  height: 350px;
 }
 #fonctionnement .fonctionnement {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 200px;
+  height: 220px;
 }
 #fonctionnement .fonctionnement .div-fonctnmnt {
   height: 60px;
-  width: 300px;
+  width: 80%;
   border-radius: 25px;
   background-color: #f2f2f2;
   box-shadow: 5px 5px 5px #e6e6e6;
@@ -299,7 +295,7 @@ h2 {
 
 /* ****** restaurants ****** */
 #main-accueil {
-  margin-top: 100px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
@@ -561,7 +557,7 @@ footer ul li a p {
   border-radius: 25px;
   height: 20%;
   justify-content: space-between;
-  padding-left: 5%;
+  /*padding-left: 5%;*/
   margin: 0 2% 0 2%;
   align-items: center;
   box-shadow: 5px 5px 5px #e6e6e6;
@@ -570,20 +566,23 @@ footer ul li a p {
   transition: all 2s;
 }
 .main-restau .dishes-cat .dishes:hover .price {
-  transform: translateX(-50px);
+  transform: translateX(-100px);
   transition-duration: 1000ms;
+  /*transition-delay:100ms;*/
 }
 .main-restau .dishes-cat .dishes:hover .validation {
-  transform: translateX(0px);
-  transition-duration: 1000ms;
+  transform: translateX(0);
+  transition-duration: 800ms;
+  animation: valid 1000ms forwards;
 }
 .main-restau .dishes-cat .dishes:hover .fa-circle-check {
-  transform: rotate(-360deg);
-  transition-duration: 1200ms;
+  transform: rotate(360deg);
+  transition-duration: 900ms;
 }
 .main-restau .dishes-cat .dishes-name {
   font-family: "Roboto", "sans-serif";
-  width: 80%;
+  width: 95%;
+  margin-left: 3%;
 }
 .main-restau .dishes-cat .dishes-name h3 {
   opacity: 0.75;
@@ -605,7 +604,8 @@ footer ul li a p {
   position: relative;
   display: flex;
   height: 100%;
-  width: 20%;
+  width: 5%;
+  min-width: 100px;
   justify-content: center;
   align-items: center;
 }
@@ -627,7 +627,8 @@ footer ul li a p {
   color: #fff;
   font-size: 3vh;
   background-color: #99E2D0;
-  transform: translateX(100px);
+  transform: translateX(80%);
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
