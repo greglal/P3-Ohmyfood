@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
 }
+
 /* ***** variables ***** */
 /* *** couleurs *** */
 $primary-clr: #9356DC;
@@ -83,15 +84,15 @@ $anim-delay:$anim-dur/$num-elem;
   /* *** loader *** */
   @keyframes loader-full{
     0%{
-      opacity:0.8
-      /*visibility:visible;*/
+      opacity:0.8;
+      visibility:visible;
     }
     95%{
       opacity:0.8;
     }
     100%{
       opacity:0;
-      /*visibility:hidden;*/
+      visibility:hidden;
     }
   }
 
@@ -168,6 +169,7 @@ $anim-delay:$anim-dur/$num-elem;
   height:100vh;
   opacity:0;
   animation:loader-full 3000ms linear;
+  visibility:hidden;
   .circle1{
     position: relative;
     width:65px;
@@ -175,7 +177,6 @@ $anim-delay:$anim-dur/$num-elem;
     display:inline-block;
     vertical-align: middle;
     border-top:5px solid $primary-clr;
-    /*border-bottom:5px solid $primary-clr;*/
     border-radius:65px;
     animation:rotate-loader 1000ms linear infinite;
   }
@@ -183,8 +184,6 @@ $anim-delay:$anim-dur/$num-elem;
     position: absolute;
     width:50px;
     height:50px;
-    /*border-left:5px solid $secondary-clr;
-    border-right: 5px solid $secondary-clr;*/
     border-top:5px solid $secondary-clr;
     border-radius:50px;
     rotate:45deg;
@@ -194,8 +193,6 @@ $anim-delay:$anim-dur/$num-elem;
     position: absolute;
     width:35px;
     height:35px;
-    /*border-left:5px solid $secondary-clr;
-    border-right: 5px solid $secondary-clr;*/
     border-top:5px solid $tertiary-clr;
     border-radius:35px;
     rotate:90deg;
@@ -236,7 +233,7 @@ header{
     flex-direction:column;
     input{
       width:100%;
-      height:60px;
+      height:20%;
       border:none;
       text-align:center;
       align-items:center;
@@ -296,11 +293,7 @@ h2{
 }
 
 #fonctionnement{
-  /*margin-top:40px;*/
   @include flex-evenly;
-  /*display:flex;
-  flex-direction:column;
-  justify-content:space-evenly;*/
   height:350px;
   .fonctionnement{
     margin-top:10px;
@@ -559,7 +552,6 @@ footer{
       border-radius: 25px;
       height: 20%;
       justify-content: space-between;
-      /*padding-left: 5%;*/
       margin: 0 2% 0 2%;
       align-items: center;
       box-shadow: 5px 5px 5px darken(#fff, 10%);
@@ -614,7 +606,6 @@ footer{
           color:#fff;
           font-size:$title-size;
           background-color: $tertiary-clr;
-          transform:translateX(80%);
           visibility:hidden;
           }
         }
