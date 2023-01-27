@@ -164,9 +164,11 @@
 **************************** */
 /* ****** header ****** */
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-top: 5%;
-  height: 50px;
+  height: 80px;
 }
 
 /* ****** formulaire ****** */
@@ -371,7 +373,6 @@ h2 {
 }
 #main-accueil .restaurant .restaurant-descrtn .dscrtn h3 {
   font-family: "Roboto", "sans-serif";
-  opacity: 0.75;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -381,7 +382,6 @@ h2 {
 #main-accueil .restaurant .restaurant-descrtn .dscrtn p {
   font-family: "Roboto", "sans-serif";
   margin-top: 5px;
-  opacity: 0.75;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -455,12 +455,19 @@ footer ul li a p {
 .header-restaurant {
   display: flex;
   justify-content: space-around;
-  margin: 20px 80px 0 30px;
+  align-items: center;
 }
-.header-restaurant .fa-arrow-left {
+.header-restaurant .linkArrow {
+  width: 10%;
+  text-decoration: none;
+  color: black;
+}
+.header-restaurant .linkArrow .fa-arrow-left {
   font-size: 3vh;
   font-weight: bold;
-  margin-top: 5px;
+}
+.header-restaurant .linkArrow #logo {
+  width: 80%;
 }
 
 /* ***** photo restau ***** */
@@ -598,7 +605,6 @@ footer ul li a p {
   margin-left: 3%;
 }
 .main-restau .dishes-cat .dishes-name h3 {
-  opacity: 0.75;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -606,7 +612,6 @@ footer ul li a p {
   font-size: 2vh;
 }
 .main-restau .dishes-cat .dishes-name p {
-  opacity: 0.75;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -712,6 +717,13 @@ footer ul li a p {
     max-width: 1200px;
     margin: auto;
   }
+  .header-restaurant {
+    /*@include flexRow;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+  }
   .main-restau {
     height: 450px;
   }
@@ -735,22 +747,6 @@ footer ul li a p {
   .dishes-cat .dishes .dishes-name {
     width: 95%;
     max-width: 250px;
-  }
-  .dishes-cat .dishes .valid {
-    width: 5%;
-  }
-  .dishes-cat {
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .dishes-cat .dishes {
-    width: 100%;
-  }
-  .dishes-cat .dishes .dishes-name {
-    width: 95%;
-    max-width: 210px;
   }
   .dishes-cat .dishes .valid {
     width: 5%;

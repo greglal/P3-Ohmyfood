@@ -49,7 +49,6 @@ tablet: 768px, desktop: 992px
 }
 
 @mixin ellipsis{
-  opacity:.75;
   overflow:hidden;
   white-space:nowrap;
   text-overflow: ellipsis;
@@ -233,9 +232,11 @@ tablet: 768px, desktop: 992px
 
 /* ****** header ****** */
 header{
+  display: flex;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  margin-top:5%;
-  height:50px;
+  height:80px;
 }
 
 /* ****** formulaire ****** */
@@ -491,12 +492,21 @@ footer{
 .header-restaurant{
   display:flex;
   justify-content: space-around;
-  margin:20px 80px 0 30px;
-  .fa-arrow-left{
-    font-size:$title-size;
-    font-weight:bold;
-    margin-top:5px;
+  align-items:center;
+
+  .linkArrow{
+    width:10%;
+    text-decoration: none;
+    color:black;
+    .fa-arrow-left{
+      font-size:$title-size;
+      font-weight:bold;
+    }
+    #logo{
+      width:80%;
+    }
   }
+
 }
 
 /* ***** photo restau ***** */
@@ -702,6 +712,14 @@ footer{
     margin: auto;
   }
 
+  .header-restaurant{
+    /*@include flexRow;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:60%;
+  }
+
   .main-restau{
     height:450px;
   }
@@ -723,21 +741,6 @@ footer{
       .dishes-name{
         width:95%;
         max-width:250px;
-      }
-      .valid{
-        width:5%;
-      }
-    }
-  }
-
-  .dishes-cat{
-    width:30%;
-    @include flexRow;
-    .dishes{
-      width:100%;
-      .dishes-name{
-        width:95%;
-        max-width:210px;
       }
       .valid{
         width:5%;
