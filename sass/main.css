@@ -7,6 +7,7 @@
 /* *** couleurs *** */
 /* *** fonts *** */
 /* *** elements *** */
+/* *** breakpoints *** */
 /* ***** mixins ***** */
 /* ***** keyframes ***** */
 /* *** remplissage coeur *** */
@@ -431,6 +432,7 @@ footer ul {
   justify-content: space-evenly;
   height: 100px;
   font-family: "Roboto", "sans-serif";
+  list-style: none;
 }
 footer ul li a {
   margin-left: 20px;
@@ -591,7 +593,8 @@ footer ul li a p {
 }
 .main-restau .dishes-cat .dishes-name {
   font-family: "Roboto", "sans-serif";
-  width: 95%;
+  width: 70%;
+  min-width: 195px;
   margin-left: 3%;
 }
 .main-restau .dishes-cat .dishes-name h3 {
@@ -643,5 +646,115 @@ footer ul li a p {
 /* ***************************
 ****** version tablette ******
 *************************** */
+@media (min-width: 768px) {
+  .btn-explore {
+    max-width: 250px;
+  }
+  /* ****** page accueil ****** */
+  #fonctionnement {
+    height: 150px;
+    margin-top: 10px;
+  }
+  #fonctionnement .fonctionnement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #fonctionnement .fonctionnement .div-fonctnmnt {
+    width: 25%;
+  }
+  #main-accueil {
+    height: 650px;
+  }
+  #main-accueil h2 {
+    margin: 15px 0 0 60px;
+  }
+  #main-accueil #articles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  #main-accueil #articles .restaurant {
+    width: 40%;
+  }
+  /* ****** page menus ****** */
+  .header-restaurant {
+    justify-content: center;
+  }
+  .header-restaurant #logo {
+    width: 50%;
+  }
+  .header-restaurant .fa-arrow-left {
+    margin-top: 0;
+    width: 10%;
+    font-size: 4vh;
+  }
+  footer {
+    height: 130px;
+  }
+  footer #logo-footer {
+    margin-top: 20px;
+    align-self: center;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+}
+/* **************************
+****** version desktop ******
+************************** */
+@media (min-width: 1024px) {
+  body {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .main-restau {
+    height: 450px;
+  }
+  .carte {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .dishes-cat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .dishes-cat .dishes {
+    width: 100%;
+  }
+  .dishes-cat .dishes .dishes-name {
+    width: 95%;
+    max-width: 250px;
+  }
+  .dishes-cat .dishes .valid {
+    width: 5%;
+  }
+  .dishes-cat {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .dishes-cat .dishes {
+    width: 100%;
+  }
+  .dishes-cat .dishes .dishes-name {
+    width: 95%;
+    max-width: 210px;
+  }
+  .dishes-cat .dishes .valid {
+    width: 5%;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
