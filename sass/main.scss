@@ -181,7 +181,7 @@ tablet: 768px, desktop: 992px
   justify-content:center;
   align-items:center;
   background-color:#fff;
-  width:100%;
+  width:100vw;
   height:100vh;
   opacity:0;
   animation:loader-full 3000ms linear;
@@ -235,7 +235,6 @@ header{
   display: flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
   height:80px;
 }
 
@@ -491,9 +490,8 @@ footer{
 /* ***** header ***** */
 .header-restaurant{
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items:center;
-
   .linkArrow{
     width:10%;
     text-decoration: none;
@@ -712,12 +710,15 @@ footer{
     margin: auto;
   }
 
+  .loader{
+    max-width: 1200px;
+  }
+
   .header-restaurant{
     /*@include flexRow;*/
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width:60%;
+    justify-content: center;
   }
 
   .main-restau{
