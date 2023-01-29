@@ -129,6 +129,7 @@
   border-top: 5px solid #9356DC;
   border-radius: 65px;
   animation: rotate-loader 1000ms linear infinite;
+  animation-delay: 250ms;
 }
 .loader .circle2 {
   position: absolute;
@@ -136,8 +137,9 @@
   height: 50px;
   border-top: 5px solid #FF79DA;
   border-radius: 50px;
-  rotate: 45deg;
-  animation: rotate-loader 990ms linear infinite;
+  transform: rotate(45deg);
+  animation: rotate-loader 1000ms linear infinite;
+  animation-delay: 125ms;
 }
 .loader .circle3 {
   position: absolute;
@@ -145,8 +147,8 @@
   height: 35px;
   border-top: 5px solid #99E2D0;
   border-radius: 35px;
-  rotate: 90deg;
-  animation: rotate-loader 980ms linear infinite;
+  transform: rotate(90deg);
+  animation: rotate-loader 1000ms linear infinite;
 }
 .loader .fa-utensils {
   position: absolute;
@@ -264,6 +266,10 @@ h2 {
   background-color: #f2f2f2;
   box-shadow: 5px 5px 5px #e6e6e6;
   align-self: center;
+}
+#fonctionnement .fonctionnement .div-fonctnmnt:hover {
+  background: #e4d5f6;
+  box-shadow: 5px 5px #bfbfbf;
 }
 #fonctionnement .fonctionnement .etape-fonctnmnt {
   display: flex;

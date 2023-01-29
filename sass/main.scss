@@ -195,6 +195,7 @@ tablet: 768px, desktop: 992px
     border-top:5px solid $primary-clr;
     border-radius:65px;
     animation:rotate-loader 1000ms linear infinite;
+    animation-delay:250ms
   }
   .circle2{
     position: absolute;
@@ -202,8 +203,9 @@ tablet: 768px, desktop: 992px
     height:50px;
     border-top:5px solid $secondary-clr;
     border-radius:50px;
-    rotate:45deg;
-    animation:rotate-loader 990ms linear infinite;
+    transform:rotate(45deg);
+    animation:rotate-loader 1000ms linear infinite;
+    animation-delay:125ms;
   }
   .circle3{
     position: absolute;
@@ -211,8 +213,8 @@ tablet: 768px, desktop: 992px
     height:35px;
     border-top:5px solid $tertiary-clr;
     border-radius:35px;
-    rotate:90deg;
-    animation:rotate-loader 980ms linear infinite;
+    transform:rotate(90deg);
+    animation:rotate-loader 1000ms linear infinite;
   }
   .fa-utensils{
     position: absolute;
@@ -325,6 +327,10 @@ h2{
       background-color: $bg-darken5-clr;
       box-shadow:5px 5px 5px darken(#fff, 10%);
       align-self:center;
+      &:hover{
+        background:lighten($primary-clr, 30%);
+        box-shadow:5px 5px darken(#fff, 25%);
+      }
     }
       .etape-fonctnmnt{
         display: flex;
