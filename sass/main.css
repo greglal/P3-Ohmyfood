@@ -288,6 +288,7 @@ h2 {
   color: #fff;
 }
 #fonctionnement .fonctionnement .etape-fonctnmnt .number .num {
+  display: block;
   margin-top: 3px;
 }
 #fonctionnement .fonctionnement .etape-fonctnmnt .fa-mobile-screen-button {
@@ -574,7 +575,7 @@ footer ul li a p {
   width: 35px;
   height: 2px;
   margin-left: 15px;
-  margin-top: -10px;
+  margin-top: 10px;
   background-color: #99E2D0;
   border: none;
 }
@@ -732,21 +733,23 @@ footer ul li a p {
     justify-content: center;
   }
   .main-restau {
-    height: 450px;
+    height: 850px;
+  }
+  .main-restau .dishes-cat {
+    /*display: flex;
+    flex-direction: column;*/
+    justify-content: space-between;
+    margin: 30px 0 30px 0;
   }
   .carte {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
   }
   .dishes-cat {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    width: 45%;
   }
   .dishes-cat .dishes {
     width: 100%;

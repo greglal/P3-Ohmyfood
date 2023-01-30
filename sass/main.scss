@@ -347,6 +347,7 @@ h2{
           background-color:$primary-clr;
           color:#fff;
           .num{
+            display: block;
             margin-top:3px;
           }
         }
@@ -528,14 +529,12 @@ footer{
   background-color: $bg-darken5-clr;
   display: flex;
   flex-direction: column;
-
   .title-restau {
     padding: 20px 20px 0 20px;
     display: flex;
     justify-content: space-between;
     background-color: $bg-darken5-clr;
     border-radius: 25px 25px 0 0;
-
     .name-restau {
       font-size: $title-size;
       font-family: $title-font;
@@ -546,7 +545,6 @@ footer{
       font-size: $title-size;
     }
   }
-
   .elem{
     transform: translateY(0);
     @for $i from 1 through $num-elem {
@@ -556,7 +554,6 @@ footer{
       }
     }
   }
-
   .dishes-cat {
     height: 300px;
     @include flex-evenly;
@@ -572,7 +569,7 @@ footer{
       width: 35px;
       height: 2px;
       margin-left: 15px;
-      margin-top: -10px;
+      margin-top: 10px;
       background-color: $tertiary-clr;
       border: none;
     }
@@ -710,47 +707,53 @@ footer{
 /* **************************
 ****** version desktop ******
 ************************** */
-@media (min-width:1024px){
-  body{
-    max-width:1200px;
+@media (min-width:1024px) {
+  body {
+    max-width: 1200px;
     margin: auto;
   }
 
-  .loader{
+  .loader {
     max-width: 1200px;
   }
 
-  .header-restaurant{
+  .header-restaurant {
     /*@include flexRow;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
-  .main-restau{
-    height:450px;
+  .main-restau {
+    height: 850px;
+    .dishes-cat{
+      /*display: flex;
+      flex-direction: column;*/
+      justify-content:space-between;
+      margin:30px 0 30px 0;
+    }
   }
 
-  .carte{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
+  .carte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
   }
 
-  .dishes-cat{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
-    width:30%;
-    @include flexRow;
-    .dishes{
-      width:100%;
-      .dishes-name{
-        width:95%;
-        max-width:250px;
+  .dishes-cat {
+    width:45%;
+    .dishes {
+      width: 100%;
+
+      .dishes-name {
+        width: 95%;
+        max-width: 250px;
       }
-      .valid{
-        width:5%;
+
+      .valid {
+        width: 5%;
       }
     }
   }
