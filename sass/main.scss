@@ -1,8 +1,11 @@
-@import "./base/_boxSizing.scss";
-@import "./components/_components.scss";
-@import "./layouts/_layouts.scss";
-@import "./layouts/_mediaQueries.scss";
-@import "./utils/_keyframes.scss";
-@import "./utils/_mixins.scss";
 @import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+@import "./utils/keyframes.scss";
+@import "./base/boxSizing.scss";
+@import "./components/components.scss";
+@import "./layouts/layouts.scss";
+@import "./layouts/mediaQueries.scss";
+
+
+
 

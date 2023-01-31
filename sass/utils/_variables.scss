@@ -16,7 +16,7 @@ $title-scnd-size:2.5vh;
 /* *** elements *** */
 $num-elem:12;
 $anim-dur:1000ms;
-$anim-delay:$anim-dur / $num-elem;
+$anim-delay:calc($anim-dur / $num-elem);
 /* *** breakpoints *** */
 $breakpoints:(
         tablet: 768px, desktop: 992px
