@@ -1,8 +1,4 @@
-/* *** couleurs *** */
-/* *** fonts *** */
-/* *** elements *** */
-/* *** breakpoints *** */
-/* *** remplissage coeur *** */
+
 @keyframes fill-heart {
   0% {
     transform: scale(0.1);
@@ -756,4 +752,4 @@ h2 {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
