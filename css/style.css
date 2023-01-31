@@ -1,10 +1,759 @@
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 15 \2502        font-size:$title-size;\d\a    \2502                  ^^^^^^^^^^^\a    \2575 \a   sass\\components\\_components.scss 15:17  @import\a   sass\\main.scss 2:9                      root stylesheet";
+/* *** couleurs *** */
+/* *** fonts *** */
+/* *** elements *** */
+/* *** breakpoints *** */
+/* *** remplissage coeur *** */
+@keyframes fill-heart {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(0.2);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(0.4);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
+/* *** loader *** */
+@keyframes loader-full {
+  0% {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  95% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes rotate-loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse-loader {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+/* *** apparition menus *** */
+@keyframes menus {
+  from {
+    opacity: 0.5;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* *** apparition validation *** */
+@keyframes valid {
+  from {
+    transform: translateX(80%);
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+@keyframes price {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+@keyframes check {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* **************************
+****** page restaurant ******
+************************** */
+/* ***** header ***** */
+.header-restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-restaurant .linkArrow {
+  width: 10%;
+  text-decoration: none;
+  color: black;
+}
+.header-restaurant .linkArrow .fa-arrow-left {
+  font-size: 3vh;
+  font-weight: bold;
+}
+.header-restaurant .linkArrow #logo {
+  width: 80%;
+}
+
+/* ***** photo restau ***** */
+.pic-restau {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* ***** loader ***** */
+.loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  animation: loader-full 3000ms linear;
+  visibility: hidden;
+}
+.loader .circle1 {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 5px solid #9356DC;
+  border-radius: 65px;
+  animation: rotate-loader 1000ms linear infinite;
+  animation-delay: 250ms;
+}
+.loader .circle2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-top: 5px solid #FF79DA;
+  border-radius: 50px;
+  transform: rotate(45deg);
+  animation: rotate-loader 1000ms linear infinite;
+  animation-delay: 125ms;
+}
+.loader .circle3 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-top: 5px solid #99E2D0;
+  border-radius: 35px;
+  transform: rotate(90deg);
+  animation: rotate-loader 1000ms linear infinite;
+}
+.loader .fa-utensils {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #9356DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse-loader 800ms linear alternate infinite;
+}
+
+/* ***** boutons ***** */
+.btn-explore {
+  width: 55%;
+  height: 55px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  font-family: "Roboto", "sans-serif";
+  font-size: 2vh;
+  color: #fff;
+  border: none;
+  box-shadow: 5px 5px #e0e0e0;
+  align-self: center;
+}
+.btn-explore:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 5px 5px #bfbfbf;
+}
+
+/* ****** header ****** */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+/* ****** footer ****** */
+footer {
+  background-color: #353535;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+footer #logo-footer {
+  font-size: 2.5vh;
+  font-family: "Shrikhand", "sans-serif";
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100px;
+  font-family: "Roboto", "sans-serif";
+  list-style: none;
+}
+footer ul li a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  width: 60%;
+}
+footer ul li a i {
+  width: 10px;
+}
+footer ul li a p {
+  margin-left: 20px;
+}
+
+/* ****** fonctionnement ****** */
+h2 {
+  margin-left: 15px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: bolder;
+  font-size: 2.5vh;
+}
+
+#fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 350px;
+}
+#fonctionnement .fonctionnement {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+}
+#fonctionnement .fonctionnement .div-fonctnmnt {
+  height: 60px;
+  width: 80%;
+  border-radius: 25px;
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  align-self: center;
+}
+#fonctionnement .fonctionnement .div-fonctnmnt:hover {
+  background: #e4d5f6;
+  box-shadow: 5px 5px #bfbfbf;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  font-size: 1.5vh;
+  font-family: "Roboto", "sans-serif";
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .number {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 3% 0 -3%;
+  text-align: center;
+  background-color: #9356DC;
+  color: #fff;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .number .num {
+  display: block;
+  margin-top: 3px;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-mobile-screen-button {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-list {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .fa-store {
+  margin: 0 3% 0 3%;
+  color: #838383;
+  font-size: 2.5vh;
+  color: #9356DC;
+}
+#fonctionnement .fonctionnement .etape-fonctnmnt .title-fonctnmnt {
+  margin: 0 3% 0 3%;
+}
+
+/* ****** restaurants ****** */
+#main-accueil {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  height: 1230px;
+}
+#main-accueil h2 {
+  margin: 50px 0 0 20px;
+}
+#main-accueil #articles {
+  height: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#main-accueil .restaurant {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 90%;
+  height: 250px;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  text-decoration: none;
+  color: black;
+}
+#main-accueil .restaurant .img-restaurant {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 50% 60%;
+  border-radius: 15px 15px 0 0;
+}
+#main-accueil .restaurant .img-new {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#main-accueil .restaurant .img-new .new {
+  background-color: #99E2D0;
+  width: 20%;
+  height: 4%;
+  max-width: 100px;
+  max-height: 35px;
+  border-radius: 1px;
+  margin: 15px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-accueil .restaurant .img-new .new p {
+  font-weight: bold;
+  color: #217460;
+}
+#main-accueil .restaurant .restaurant-descrtn {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+#main-accueil .restaurant .restaurant-descrtn .dscrtn {
+  width: 80%;
+}
+#main-accueil .restaurant .restaurant-descrtn .dscrtn h3 {
+  font-family: "Roboto", "sans-serif";
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
+}
+#main-accueil .restaurant .restaurant-descrtn .dscrtn p {
+  font-family: "Roboto", "sans-serif";
+  margin-top: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
+}
+
+.hearts {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hearts .fa-regular {
+  font-size: 3vh;
+  position: absolute;
+}
+.hearts .fa-solid {
+  opacity: 0;
+  font-size: 3vh;
+  position: absolute;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hearts .fa-solid:hover {
+  animation: fill-heart 350ms cubic-bezier(0.59, 0.09, 0.95, 0.67) both;
+}
+
+/* ****** formulaire ****** */
+#form {
+  display: flex;
+  flex-direction: column;
+}
+#form form {
+  width: 100%;
+  height: 400px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+#form form input {
+  width: 100%;
+  height: 20%;
+  border: none;
+  text-align: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  box-shadow: inset 0 5px 5px #cccccc;
+}
+#form form input::placeholder {
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: "Roboto", "sans-serif", Fontawesome;
+  color: black;
+}
+#form form .formTxt {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5% 0 5% 0;
+}
+#form form .formTxt h1 {
+  font-family: "Roboto", "sans-serif";
+  font-size: 3vh;
+  font-weight: bold;
+  width: 65%;
+  text-align: center;
+}
+#form form .formTxt p {
+  font-family: "Roboto", "sans-serif";
+  font-size: 2vh;
+  width: 75%;
+}
+
+/* ***** main/menu ***** */
+.main-restau {
+  height: 1100px;
+  margin-top: -25px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+.main-restau .title-restau {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 25px 25px 0 0;
+}
+.main-restau .title-restau .name-restau {
+  font-size: 3vh;
+  font-family: "Shrikhand", "sans-serif";
+}
+.main-restau .title-restau .hearts-restau {
+  margin-right: 20px;
+  margin-top: 5px;
+  font-size: 3vh;
+}
+.main-restau .elem {
+  transform: translateY(0);
+}
+.main-restau .elem--1 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 83.3333333333ms;
+}
+.main-restau .elem--2 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 166.6666666667ms;
+}
+.main-restau .elem--3 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 250ms;
+}
+.main-restau .elem--4 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 333.3333333333ms;
+}
+.main-restau .elem--5 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 416.6666666667ms;
+}
+.main-restau .elem--6 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 500ms;
+}
+.main-restau .elem--7 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 583.3333333333ms;
+}
+.main-restau .elem--8 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 666.6666666667ms;
+}
+.main-restau .elem--9 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 750ms;
+}
+.main-restau .elem--10 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 833.3333333333ms;
+}
+.main-restau .elem--11 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 916.6666666667ms;
+}
+.main-restau .elem--12 {
+  animation: menus 1500ms cubic-bezier(0.58, 0.46, 0.16, 0.77);
+  animation-delay: 1000ms;
+}
+.main-restau .dishes-cat {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main-restau .dishes-cat .dishes-cat-title {
+  text-transform: uppercase;
+  font-family: "Roboto", "sans-serif";
+  font-size: 2vh;
+  opacity: 0.75;
+}
+.main-restau .dishes-cat .underline {
+  width: 35px;
+  height: 2px;
+  margin-left: 15px;
+  margin-top: 10px;
+  background-color: #99E2D0;
+  border: none;
+}
+.main-restau .dishes-cat .dishes {
+  display: flex;
+  background-color: #fff;
+  border-radius: 25px;
+  height: 20%;
+  justify-content: space-between;
+  margin: 0 2% 0 2%;
+  align-items: center;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  text-decoration: none;
+  color: black;
+}
+.main-restau .dishes-cat .dishes:hover .dishes-name {
+  transition: width 300ms linear;
+  width: 60%;
+}
+.main-restau .dishes-cat .dishes:hover .price {
+  animation: price 500ms cubic-bezier(0.4, 0.78, 0.54, 1.06) forwards;
+}
+.main-restau .dishes-cat .dishes:hover .validation {
+  animation: valid 500ms cubic-bezier(0.4, 0.78, 0.54, 1.06) forwards;
+}
+.main-restau .dishes-cat .dishes:hover .fa-circle-check {
+  animation: check 500ms ease-out;
+}
+.main-restau .dishes-cat .dishes-name {
+  font-family: "Roboto", "sans-serif";
+  width: 70%;
+  min-width: 195px;
+  margin-left: 3%;
+}
+.main-restau .dishes-cat .dishes-name h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
+}
+.main-restau .dishes-cat .dishes-name p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  font-size: 2vh;
+}
+.main-restau .dishes-cat .valid {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5%;
+  min-width: 100px;
+}
+.main-restau .dishes-cat .valid .price {
+  position: absolute;
+  font-family: "Roboto", "sans-serif";
+  font-size: 2vh;
+  font-weight: bold;
+  transform: translate(0);
+}
+.main-restau .dishes-cat .valid .validation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  font-size: 3vh;
+  background-color: #99E2D0;
+  visibility: hidden;
+}
+
+/* ***************************
+****** version tablette ******
+*************************** */
+@media (min-width: 768px) {
+  .btn-explore {
+    max-width: 250px;
+  }
+  /* ****** page accueil ****** */
+  #fonctionnement {
+    height: 150px;
+    margin-top: 10px;
+  }
+  #fonctionnement .fonctionnement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #fonctionnement .fonctionnement .div-fonctnmnt {
+    width: 25%;
+  }
+  #main-accueil {
+    height: 650px;
+  }
+  #main-accueil h2 {
+    margin: 15px 0 0 60px;
+  }
+  #main-accueil #articles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  #main-accueil #articles .restaurant {
+    width: 40%;
+  }
+  /* ****** page menus ****** */
+  .header-restaurant {
+    justify-content: center;
+  }
+  .header-restaurant #logo {
+    width: 50%;
+  }
+  .header-restaurant .fa-arrow-left {
+    margin-top: 0;
+    width: 10%;
+    font-size: 4vh;
+  }
+  footer {
+    height: 130px;
+  }
+  footer #logo-footer {
+    margin-top: 20px;
+    align-self: center;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+}
+/* **************************
+****** version desktop ******
+************************** */
+@media (min-width: 1024px) {
+  body {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .loader {
+    max-width: 1200px;
+  }
+  .header-restaurant {
+    /*@include flexRow;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main-restau {
+    height: 850px;
+  }
+  .main-restau .dishes-cat {
+    /*display: flex;
+    flex-direction: column;*/
+    justify-content: space-between;
+    margin: 30px 0 30px 0;
+  }
+  .carte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+  .dishes-cat {
+    width: 45%;
+  }
+  .dishes-cat .dishes {
+    width: 100%;
+  }
+  .dishes-cat .dishes .dishes-name {
+    width: 95%;
+    max-width: 250px;
+  }
+  .dishes-cat .dishes .valid {
+    width: 5%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
