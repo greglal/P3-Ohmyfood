@@ -1,0 +1,362 @@
+/* ****** header ****** */
+header{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  height:80px;
+}
+
+/* ****** footer ****** */
+footer{
+  background-color: #353535;
+  height:180px;
+  @include flex-evenly;
+  #logo-footer{
+    font-size:2.5vh;
+    font-family:$title-font;
+    @include footer;
+  }
+  ul{
+    @include flex-evenly;
+    height:100px;
+    font-family:$text-font;
+    list-style: none;
+    li{
+      a{
+        @include footer;
+        display:flex;
+        width:60%;
+        i{
+          width:10px;
+        }
+        p{
+          margin-left:20px;
+        }
+      }
+    }
+  }
+}
+
+/* ****** fonctionnement ****** */
+h2{
+  margin-left: 15px;
+  font-family: $text-font;
+  font-weight: bolder;
+  font-size:$title-scnd-size;
+}
+
+#fonctionnement{
+  @include flex-evenly;
+  height:350px;
+  .fonctionnement{
+    margin-top:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:220px;
+    .div-fonctnmnt{
+      height:60px;
+      width:80%;
+      border-radius:25px;
+      background-color: $bg-darken5-clr;
+      box-shadow:5px 5px 5px darken(#fff, 10%);
+      align-self:center;
+      &:hover{
+        background:lighten($primary-clr, 30%);
+        box-shadow:5px 5px darken(#fff, 25%);
+      }
+    }
+    .etape-fonctnmnt{
+      display: flex;
+      height:60px;
+      align-items: center;
+      font-size:1.5vh;
+      font-family: $text-font;
+      .number{
+        width:20px;
+        height:20px;
+        border-radius:50%;
+        margin:0 3% 0 -3%;
+        text-align:center;
+        background-color:$primary-clr;
+        color:#fff;
+        .num{
+          display: block;
+          margin-top:3px;
+        }
+      }
+      .fa-mobile-screen-button{
+        @include icone
+      }
+      .fa-list{
+        @include icone
+      }
+      .fa-store{
+        @include icone;
+        color:$primary-clr;
+      }
+      .title-fonctnmnt{
+        margin: 0 3% 0 3%;
+      }
+    }
+  }
+}
+
+/* ****** restaurants ****** */
+#main-accueil{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  background-color:$bg-darken5-clr;
+  height:1230px;
+  h2{
+    margin:50px 0 0 20px;
+  }
+  #articles{
+    height:1100px;
+    @include flex-evenly;
+  }
+  .restaurant{
+    display:flex;
+    flex-direction:column;
+    align-self:center;
+    border-radius:15px;
+    background-color: #fff;
+    width:90%;
+    height:250px;
+    box-shadow:5px 5px 5px darken(#fff, 10%);
+    text-decoration:none;
+    color:black;
+    .img-restaurant{
+      width:100%;
+      height:180px;
+      overflow: hidden;
+      object-fit: cover;
+      object-position:50% 60%;
+      border-radius:15px 15px 0 0;
+    }
+    .img-new{
+      display:flex;
+      flex-direction:row-reverse;
+      .new{
+        background-color:$tertiary-clr;
+        width:20%;
+        height:4%;
+        max-width:100px;
+        max-height:35px;
+        border-radius:1px;
+        margin:15px;
+        position: absolute;
+        @include centerHV;
+        p{
+          font-weight: bold;
+          color: darken($tertiary-clr, 45%);
+        }
+      }
+    }
+    .restaurant-descrtn{
+      display:flex;
+      justify-content:space-evenly;
+      margin:15px;
+      .dscrtn{
+        width:80%;
+        h3{
+          font-family:$text-font;
+          @include ellipsis;
+        }
+        p{
+          font-family:$text-font;
+          margin-top: 5px;
+          @include ellipsis;
+        }
+      }
+    }
+  }
+}
+.hearts{
+  position:relative;
+  @include centerHV;
+  .fa-regular{
+    font-size:$title-size;
+    position:absolute;
+  }
+  .fa-solid {
+    opacity:0;
+    font-size: $title-size;
+    position: absolute;
+    background: $btn-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &:hover{
+      animation: fill-heart 350ms cubic-bezier(.59,.09,.95,.67) both;
+    }
+  }
+}
+
+/* ****** formulaire ****** */
+#form{
+  display:flex;
+  flex-direction:column;
+  form{
+    width:100%;
+    height:400px;
+    background-color: $bg-darken5-clr;
+    display:flex;
+    flex-direction:column;
+    input{
+      width:100%;
+      height:20%;
+      border:none;
+      text-align:center;
+      align-items:center;
+      background-color: $bg-darken10-clr;
+      box-shadow: inset 0 5px 5px darken(#fff, 20%);
+      &::placeholder{
+        font-weight:bold;
+        font-size:$text-size;
+        font-family:$text-font, Fontawesome;
+        color:black;
+      }
+    }
+    .formTxt{
+      text-align:center;
+      height:100%;
+      @include flex-evenly;
+      align-items:center;
+      padding: 5% 0 5% 0;
+      h1{
+        font-family: $text-font;
+        font-size:$title-size;
+        font-weight: bold;
+        width:65%;
+        text-align:center;
+      }
+      p{
+        font-family: $text-font;
+        font-size:$text-size;
+        width:75%;
+      }
+    }
+  }
+}
+
+/* ***** main/menu ***** */
+.main-restau {
+  height: 1100px;
+  margin-top: -25px;
+  background-color: $bg-darken5-clr;
+  display: flex;
+  flex-direction: column;
+  .title-restau {
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg-darken5-clr;
+    border-radius: 25px 25px 0 0;
+    .name-restau {
+      font-size: $title-size;
+      font-family: $title-font;
+    }
+    .hearts-restau {
+      margin-right: 20px;
+      margin-top: 5px;
+      font-size: $title-size;
+    }
+  }
+  .elem{
+    transform: translateY(0);
+    @for $i from 1 through $num-elem {
+      &--#{$i}{
+        animation: menus 1500ms cubic-bezier(.58,.46,.16,.77);
+        animation-delay: $anim-delay * $i;
+      }
+    }
+  }
+  .dishes-cat {
+    height: 300px;
+    @include flex-evenly;
+
+    .dishes-cat-title {
+      text-transform: uppercase;
+      font-family: $text-font;
+      font-size: $text-size;
+      opacity: .75;
+    }
+
+    .underline {
+      width: 35px;
+      height: 2px;
+      margin-left: 15px;
+      margin-top: 10px;
+      background-color: $tertiary-clr;
+      border: none;
+    }
+
+    .dishes {
+      display: flex;
+      background-color: #fff;
+      border-radius: 25px;
+      height: 20%;
+      justify-content: space-between;
+      margin: 0 2% 0 2%;
+      align-items: center;
+      box-shadow: 5px 5px 5px darken(#fff, 10%);
+      text-decoration:none;
+      color:black;
+      &:hover {
+        .dishes-name{
+          transition: width 300ms linear;
+          width:60%;
+        }
+        .price{
+          animation:price 500ms cubic-bezier(.4,.78,.54,1.06) forwards;
+        }
+        .validation {
+          animation:valid 500ms cubic-bezier(.4,.78,.54,1.06) forwards;
+        }
+        .fa-circle-check{
+          animation: check 500ms ease-out;
+        }
+      }
+    }
+
+    .dishes-name {
+      font-family: $text-font;
+      width: 70%;
+      min-width:195px;
+      margin-left:3%;
+      h3 {
+        @include ellipsis;
+      }
+      p {
+        @include ellipsis;
+      }
+    }
+
+    .valid {
+      position: relative;
+      @include centerHV;
+      height:100%;
+      width:5%;
+      min-width:100px;
+      .price {
+        position: absolute;
+        font-family: $text-font;
+        font-size: $text-size;
+        font-weight: bold;
+        transform:translate(0);
+      }
+      .validation {
+        width:100%;
+        height:100%;
+        @include centerHV;
+        position: absolute;
+        border-radius: 0 25px 25px 0;
+        color:#fff;
+        font-size:$title-size;
+        background-color: $tertiary-clr;
+        visibility:hidden;
+      }
+    }
+  }
+}

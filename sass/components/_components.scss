@@ -1,0 +1,103 @@
+/* **************************
+****** page restaurant ******
+************************** */
+
+/* ***** header ***** */
+.header-restaurant{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  .linkArrow{
+    width:10%;
+    text-decoration: none;
+    color:black;
+    .fa-arrow-left{
+      font-size:$title-size;
+      font-weight:bold;
+    }
+    #logo{
+      width:80%;
+    }
+  }
+
+}
+
+/* ***** photo restau ***** */
+.pic-restau{
+  height:300px;
+  width:100%;
+  overflow:hidden;
+  object-fit:cover;
+}
+
+/* ***** loader ***** */
+.loader{
+  position:fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#fff;
+  width:100vw;
+  height:100vh;
+  opacity:0;
+  animation:loader-full 3000ms linear;
+  visibility:hidden;
+  .circle1{
+    position: relative;
+    width:65px;
+    height:65px;
+    display:inline-block;
+    vertical-align: middle;
+    border-top:5px solid $primary-clr;
+    border-radius:65px;
+    animation:rotate-loader 1000ms linear infinite;
+    animation-delay:250ms
+  }
+  .circle2{
+    position: absolute;
+    width:50px;
+    height:50px;
+    border-top:5px solid $secondary-clr;
+    border-radius:50px;
+    transform:rotate(45deg);
+    animation:rotate-loader 1000ms linear infinite;
+    animation-delay:125ms;
+  }
+  .circle3{
+    position: absolute;
+    width:35px;
+    height:35px;
+    border-top:5px solid $tertiary-clr;
+    border-radius:35px;
+    transform:rotate(90deg);
+    animation:rotate-loader 1000ms linear infinite;
+  }
+  .fa-utensils{
+    position: absolute;
+    width:20px;
+    height:20px;
+    color:$primary-clr;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:pulse-loader 800ms linear alternate infinite ;
+  }
+}
+
+/* ***** boutons ***** */
+.btn-explore{
+  width:55%;
+  height:55px;
+  border-radius:30px;
+  background:$btn-color;
+  font-family: $text-font;
+  font-size:$text-size;
+  color:#fff;
+  border:none;
+  box-shadow:5px 5px darken(#fff, 12%);
+  align-self:center;
+  &:hover{
+    background:linear-gradient($secondary-clr-light, $primary-clr-light);
+    box-shadow:5px 5px darken(#fff, 25%);
+  }
+}

@@ -1,0 +1,115 @@
+/* ***************************
+****** version tablette ******
+*************************** */
+
+@media (min-width: 768px) {
+  .btn-explore{
+    max-width:250px;
+  }
+
+  /* ****** page accueil ****** */
+  #fonctionnement{
+    height:150px;
+    margin-top:10px;
+    .fonctionnement{
+      @include flexRow;
+      .div-fonctnmnt{
+        width:25%;
+      }
+    }
+  }
+
+  #main-accueil{
+    height:650px;
+    h2{
+      margin:15px 0 0 60px;
+    }
+    #articles{
+      @include flexRow;
+      flex-wrap: wrap;
+      .restaurant{
+        width:40%;
+      }
+    }
+  }
+
+  /* ****** page menus ****** */
+  .header-restaurant{
+    justify-content:center;
+    #logo{
+      width:50%;
+    }
+    .fa-arrow-left{
+      margin-top:0;
+      width:10%;
+      font-size:4vh;
+    }
+  }
+
+  footer{
+    height:130px;
+    #logo-footer{
+      margin-top:20px;
+      align-self:center;
+    }
+    ul{
+      @include flexRow;
+      margin-top:20px;
+    }
+  }
+}
+
+/* **************************
+****** version desktop ******
+************************** */
+@media (min-width:1024px) {
+  body {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .loader {
+    max-width: 1200px;
+  }
+
+  .header-restaurant {
+    /*@include flexRow;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main-restau {
+    height: 850px;
+    .dishes-cat{
+      /*display: flex;
+      flex-direction: column;*/
+      justify-content:space-between;
+      margin:30px 0 30px 0;
+    }
+  }
+
+  .carte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+
+  .dishes-cat {
+    width:45%;
+    .dishes {
+      width: 100%;
+
+      .dishes-name {
+        width: 95%;
+        max-width: 250px;
+      }
+
+      .valid {
+        width: 5%;
+      }
+    }
+  }
+}

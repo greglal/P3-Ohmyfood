@@ -1,0 +1,102 @@
+/* *** remplissage coeur *** */
+@keyframes fill-heart{
+  0%{
+    transform: scale(0.1);
+    opacity:0;
+  }
+  20%{
+    transform: scale(0.2);
+    opacity:0.3;
+  }
+  40%{
+    transform: scale(0.4);
+    opacity:0.5;
+  }
+  60%{
+    transform: scale(0.6);
+    opacity:0.6;
+  }
+  80%{
+    transform:scale(0.8);
+    opacity:0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* *** loader *** */
+@keyframes loader-full{
+  0%{
+    opacity:0.8;
+    visibility:visible;
+  }
+  95%{
+    opacity:0.8;
+  }
+  100%{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+@keyframes rotate-loader{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-loader{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.2);
+  }
+}
+
+/* *** apparition menus *** */
+@keyframes menus{
+  from{
+    opacity:.5;
+    transform: translateY(100px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+/* *** apparition validation *** */
+@keyframes valid{
+  from{
+    transform:translateX(80%);
+    visibility:hidden;
+  }
+  to{
+    transform:translateX(0);
+    visibility:visible;
+  }
+}
+
+@keyframes price{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-100px);
+  }
+}
+
+@keyframes check{
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
