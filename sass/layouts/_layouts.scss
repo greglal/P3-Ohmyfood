@@ -64,6 +64,15 @@ h2{
       &:hover{
         background:lighten($primary-clr, 30%);
         box-shadow:5px 5px darken(#fff, 25%);
+        .fa-mobile-screen-button{
+          color:$primary-clr
+        }
+        .fa-list{
+          color:$primary-clr
+        }
+        .fa-store{
+          color:$primary-clr
+        }
       }
     }
     .etape-fonctnmnt{
@@ -91,9 +100,8 @@ h2{
       .fa-list{
         @include icone
       }
-      .fa-store{
-        @include icone;
-        color:$primary-clr;
+      .fa-store {
+        @include icone
       }
       .title-fonctnmnt{
         margin: 0 3% 0 3%;
